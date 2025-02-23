@@ -24,10 +24,10 @@ func timeManager(responseWriter http.ResponseWriter, request *http.Request) {
 
 func main() {
 	http.HandleFunc("/time", timeManager)
-	PORT := ":8795"
-	log.Println("Server is running on http://localhost" + PORT)
+	port := ":8795"
+	log.Println("Server is running on http://localhost" + port)
 
-	if err := http.ListenAndServe(PORT, nil); err != nil {
+	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatal("Server failed:", err)
 	}
 }
