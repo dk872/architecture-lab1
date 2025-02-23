@@ -16,7 +16,7 @@ func timeManager(responseWriter http.ResponseWriter, request *http.Request) {
 	currTime := map[string]string{"time": time.Now().Format(time.RFC3339)}
 	responseWriter.Header().Set("Content-Type", "application/json")
 
-	if err := json.NewEncoder(responseWriter).Encode	currTime); err != nil {
+	if err := json.NewEncoder(responseWriter).Encode(currTime); err != nil {
 		http.Error(responseWriter, "Failed to encode response", http.StatusInternalServerError)
 		log.Println("Error encoding response:", err)
 	}
